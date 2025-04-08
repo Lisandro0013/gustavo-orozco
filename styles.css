@@ -1,0 +1,585 @@
+/* ===============================
+   Reseteo Básico
+=============================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===============================
+   Estilos Globales y Fondo
+=============================== */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  font-size: 1rem;
+  /* Patrón sutil de "estrellas" */
+  background-image: 
+    radial-gradient(circle, rgba(255, 0, 0, 0.15) 1px, transparent 1px),
+    radial-gradient(circle, rgba(0, 0, 139, 0.15) 1px, transparent 1px);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+}
+
+/* ===============================
+   Encabezado y Navegación
+=============================== */
+header {
+  background-color: #003366;
+  padding: 1rem;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 2rem; /* Tamaño más reducido para móviles */
+  font-size: 3rem; /* Ajustado para móviles */
+  border: 2px solid #8B0000; /* Borde rojo oscuro */
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  font-style: oblique;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background: linear-gradient(45deg, #fffb00, #fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 4px rgb(255, 217, 2);
+  padding: 0.5rem 1rem;
+  border: 2px solid #eeff00;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  font-size: 1em;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.nav-links li {
+  margin-left: 1rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #000;
+  background-color: #fff;
+  font-size: 1.2rem;
+  padding: 0.5rem 0.75rem;
+  border: 2px solid #ffcc00;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  margin: 0 0.5rem;
+}
+
+.nav-links a:hover {
+  background-color: #860404;
+  color: #fff;
+}
+
+/* ===============================
+   Sección Hero (Portada)
+=============================== */
+.hero-section {
+  display: grid;
+  grid-template-columns: 1fr;  /* Por defecto, 1 columna en móviles */
+  justify-items: center;
+  align-items: center;
+  padding: 2rem;
+  gap: 3rem;
+  background-color: transparent;
+}
+
+.hero-content {
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  color: #000;
+  font-weight: bold;
+  padding-bottom: 0.5rem;
+  border-bottom: 4px solid #070707;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.hero-content h1:hover {
+  transform: scale(1.05);
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 2rem;
+  line-height: 1.4;
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.btn-primario {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: linear-gradient(90deg, #003366, #141414);
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.btn-primario:hover {
+  transform: scale(1.05);
+  background: linear-gradient(90deg, #000, #003366);
+}
+
+.hero-image {
+  text-align: center;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 650px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-image img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* ===============================
+   Animaciones
+=============================== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes videoEntrance {
+  from {
+    opacity: 0;
+    transform: scale(0.8) rotate(-5deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+/* ===============================
+   Sección de Video
+=============================== */
+.video-section video {
+  width: 80%;
+  max-width: 800px;
+  display: block;
+  margin: 0 auto;
+  aspect-ratio: 16 / 9;
+  opacity: 0;
+  animation: videoEntrance 1.5s ease forwards;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-section video:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* ===============================
+   Diseño de Dos Columnas
+=============================== */
+/* Por defecto en móviles: columnas en modo vertical */
+.two-column-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+/* Bloques en la Columna Izquierda (PROPUESTAS, EQUIPO, BIBLIOGRAFÍA) */
+.left-column section {
+  background-color: #003366;
+  color: #fff;
+  border: 2px solid #ffcc00;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.left-column section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Bloque del Video en la Columna Derecha */
+.video-section {
+  background-color: #003366;
+  color: #fff;
+  padding: 2rem;
+  border: 2px solid #ffcc00;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.video-section video {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* ===============================
+   Sección de Contacto (Decorada)
+=============================== */
+.contact-section {
+  background: linear-gradient(135deg, #003366, #002244);
+  color: #fff;
+  padding: 3rem 2rem;
+  text-align: center;
+  border-top: 4px solid #ffcc00;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.2);
+  margin-top: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.3), transparent);
+  transform: skewX(-25deg);
+  animation: shine 2s infinite;
+}
+
+@keyframes shine {
+  0% { left: -150%; }
+  50% { left: 150%; }
+  100% { left: 150%; }
+}
+
+.contact-section a {
+  color: #ffcc00;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-section a:hover {
+  color: #fff;
+}
+
+.contact-logos {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.contact-logos a {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.contact-logos a:hover {
+  transform: scale(1.1);
+}
+
+.contact-logos img {
+  width: 40px;
+  height: auto;
+}
+
+/* ===============================
+   Media Queries (Responsive)
+=============================== */
+
+/* Tablet: a partir de 768px */
+@media (min-width: 768px) {
+  /* En tablet, el Hero se muestra en dos columnas */
+  .hero-section {
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+  }
+  
+  /* Para las dos columnas, cambiamos la dirección a fila */
+  .two-column-container {
+    flex-direction: row;
+  }
+  
+  .left-column,
+  .right-column {
+    flex: 1 1 50%;
+  }
+  
+  /* Ajuste de navegación: se incrementa el font-size y padding para pantallas medianas */
+  .navbar {
+    padding: 2rem 4rem;
+    font-size: 4rem;
+  }
+  
+  .nav-links a {
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
+  }
+  
+  .hero-content h1 {
+    font-size: 5rem;
+  }
+  
+  .hero-content p {
+    font-size: 1.4rem;
+  }
+}
+
+/* Escritorio: a partir de 1024px */
+@media (min-width: 1024px) {
+  /* Ajustamos la navegación para pantallas grandes */
+  .navbar {
+    padding: 2rem 6rem;
+    font-size: 5rem;
+  }
+  
+  .logo {
+    font-size: 3rem;
+  }
+  
+  .nav-links a {
+    font-size: 1.5rem;
+    padding: 0.75rem 1.25rem;
+  }
+  
+  /* Podemos aumentar los espacios y tamaños en el Hero */
+  .hero-section {
+    gap: 6rem;
+  }
+  
+  .hero-content h1 {
+    font-size: 5rem;
+  }
+  
+  .hero-content p {
+    font-size: 1.5rem;
+  }
+  
+  /* Ajuste para la sección de contacto: mayor padding */
+  .contact-section {
+    padding: 4rem 3rem;
+  }
+}
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: radial-gradient(circle at top left, #e0ecff, #ffffff);
+}
+
+.custom-navbar {
+  background-color: #222;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-size: 1.3rem;
+  border: 2px solid #eeff00;
+  padding: 0.3rem 0.8rem;
+  text-decoration: none;
+  color: yellow;
+  font-weight: bold;
+}
+
+.nav-links a {
+  margin-left: 1rem;
+  color: white;
+  text-decoration: none;
+  padding: 0.3rem 0.8rem;
+  border-radius: 0.3rem;
+  background-color: #444;
+  transition: background 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links .active {
+  background-color: #111010;
+  color: #fff;
+}
+
+.agenda-container {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.agenda-container h1 {
+  font-size: 2.8rem;
+  margin-bottom: 2rem;
+  animation: fadeInDown 1s ease both;
+}
+
+.agenda-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.agenda-card {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.agenda-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+@keyframes fadeInDown {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .custom-navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .nav-links a {
+    margin: 0.5rem 0;
+    width: 100%;
+  }
+}
+.custom-navbar {
+  background: linear-gradient(to right, #860404, #ff6f61);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-size: 1.3rem;
+  border: 2px solid #eeff00;
+  padding: 0.3rem 0.8rem;
+  text-decoration: none;
+  color: yellow;
+  font-weight: bold;
+  max-width: 100%;
+  display: inline-block;
+  word-break: break-word;
+}
+
+.nav-links a {
+  margin-left: 1rem;
+  color: white;
+  text-decoration: none;
+  padding: 0.3rem 0.8rem;
+  border-radius: 0.3rem;
+  background-color: #222;
+  transition: background 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links .active {
+  background-color: #ffcc00;
+  color: #000;
+}
+
+@media (max-width: 768px) {
+  .custom-navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .nav-links a {
+    margin: 0.5rem 0;
+    width: 100%;
+  }
+
+  .logo {
+    font-size: 1rem;
+    padding: 0.2rem 0.5rem;
+  }
+}
+
+.agenda-card {
+  border: 2px solid #003366;
+}
+.contact-logos a i {
+  color: #003366;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.contact-logos a i:hover {
+  transform: scale(1.2);
+  color: #860404;
+}
